@@ -2,6 +2,7 @@ import './App.css';
 import InputSearch from './components/InputSearch';
 import { PureComponent } from 'react';
 import IssueCard from './components/IssueCard'
+import IssuesContainer from './components/IssuesContainer';
 class App extends PureComponent{
 
   state = {
@@ -59,11 +60,9 @@ class App extends PureComponent{
           onChangeLabel={(event) => this.onChangeLabel(event)}
           onSearch={() => this.searchIssues()}
         />
-        <div class="container">
-          <div className="row">
-            {this.state.issues.map(issue => issue)}
-          </div>
-        </div>
+        
+            <IssuesContainer issues={this.state.issues} />
+          
 
       </div>
     )
